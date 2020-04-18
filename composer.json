@@ -3,7 +3,7 @@
     "description": "Some components for Yii1",
     "keywords": [
         "Yii1",
-        "Yii2 behaviors collection"
+        "Yii1 behaviors collection"
     ],
     "minimum-stability": "stable",
     "license": "proprietary",

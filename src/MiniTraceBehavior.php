@@ -1,6 +1,6 @@
 <?php
 
-namespace betabog\yii1;
+namespace betadog\yii1;
 
 /**
  * Class MiniTrace
