@@ -19,7 +19,7 @@ namespace betabog\yii1;
  * echo Yii:app()->miniTrace();
  *
  */
-class MiniTraceBehavior extends CBehavior
+class MiniTraceBehavior extends \CBehavior
 {
     public function getMiniTrace(): string
     {
