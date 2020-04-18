@@ -3,19 +3,19 @@
     "description": "Some components for Yii1",
     "keywords": [
         "Yii1",
-        "Yii2 components"
-    ],
-    "authors": [
-      {
-        "name" : "Konstantin Betadog",
-        "email":"kuradoberi@yandex.ru"
-      }
+        "Yii2 behaviors collection"
     ],
     "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Konstantin aka Betadog",
+            "email": "kuradoberi@yandex.ru"
+        }
+    ],
     "require": {
-        "php": ">=7.2"
-    },
-    "require-dev": {
+        "php": ">=7.2",
+        "yiisoft/yii":"1.*"
     },
     "autoload": {
         "psr-4": {
