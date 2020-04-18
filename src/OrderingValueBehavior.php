@@ -1,5 +1,7 @@
 <?php
 
+namespace betadog\yii1;
+
 /**
  * Класс для автоматического отслеживания и порядка сортировки элементов
  *
@@ -12,7 +14,7 @@ public function behaviors()
 {
     return [
         'orderingAttribute' => [
-            'class'      => 'application.components.behaviors.OrderingValueBehavior',
+            'class'      => 'betadog\\yii1\\OrderingValueBehavior',
             // колонка по которой осуществляется сортировка
             'columnName' => 'ordering',
             // на какое место ставится новый элемент
@@ -22,7 +24,7 @@ public function behaviors()
 }
 </pre>
  */
-class OrderingValueBehavior extends CActiveRecordBehavior
+class OrderingValueBehavior extends \CActiveRecordBehavior
 {
     const POSITION_START = 0;
     const POSITION_END   = 1;
@@ -35,7 +37,7 @@ class OrderingValueBehavior extends CActiveRecordBehavior
 
     public function attach($owner)
     {
-        $validator = CValidator::createValidator('numerical', $owner, $this->columnName, [
+        $validator = \CValidator::createValidator('numerical', $owner, $this->columnName, [
             'integerOnly' => true,
             'allowEmpty'  => false,
         ]);
@@ -46,12 +48,12 @@ class OrderingValueBehavior extends CActiveRecordBehavior
 
     public function beforeValidate($event)
     {
-        /** @var CActiveRecord $owner */
+        /** @var \CActiveRecord $owner */
         $owner = $this->getOwner();
 
         if ($owner->getIsNewRecord()) {
-            $fieldName = Yii::app()->db->quoteColumnName($this->columnName);
-            $position  = Yii::app()->db->createCommand()
+            $fieldName = \Yii::app()->db->quoteColumnName($this->columnName);
+            $position  = \Yii::app()->db->createCommand()
                 ->select("MAX($fieldName)")
                 ->from($owner->tableName())
                 ->queryScalar();
@@ -62,20 +64,20 @@ class OrderingValueBehavior extends CActiveRecordBehavior
 
     public function afterSave($event)
     {
-        /** @var CActiveRecord $owner */
+        /** @var \CActiveRecord $owner */
         $owner = $this->getOwner();
 
         /**
-         * POSITION_END set in validator
+         * self::POSITION_END set in validator
          */
         if ($owner->getIsNewRecord() && self::POSITION_START == $this->position) {
-            $fieldName   = Yii::app()->db->quoteColumnName($this->columnName);
-            $minPosition = Yii::app()->db->createCommand()
+            $fieldName   = \Yii::app()->db->quoteColumnName($this->columnName);
+            $minPosition = \Yii::app()->db->createCommand()
                 ->select("MIN($fieldName)")
                 ->from($owner->tableName())
                 ->queryScalar();
-            Yii::app()->db->createCommand()->update($owner->tableName(), [$this->columnName => new CDbExpression("{$fieldName} + 1")]);
-            Yii::app()->db->createCommand()->update($owner->tableName(), [$this->columnName => $minPosition], 'id = :id', [':id' => $owner->id]);
+            \Yii::app()->db->createCommand()->update($owner->tableName(), [$this->columnName => new \CDbExpression("{$fieldName} + 1")]);
+            \Yii::app()->db->createCommand()->update($owner->tableName(), [$this->columnName => $minPosition], 'id = :id', [':id' => $owner->id]);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace betadog\yii1;
 <pre>
     'behaviors'         => [
         'miniTrace' => [
-            'class' => 'application.components.behaviors.MiniTraceBehavior',
+            'class' => 'betadog\\yii1\\MiniTraceBehavior',
         ],
     ],
 </pre>
