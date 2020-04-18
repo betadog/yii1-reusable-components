@@ -18,7 +18,7 @@ public function behaviors()
             // колонка по которой осуществляется сортировка
             'columnName' => 'ordering',
             // на какое место ставится новый элемент
-            'position'   => OrderingValue::POSITION_END
+            'position'   => \betadog\yii1\OrderingValueBehavior::POSITION_END
         ],
     ];
 }

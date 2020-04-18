@@ -1,9 +1,13 @@
 # yii1-reusable-components
 
+This package provide some behaviors:
+
+* `MiniTrace` - allow get minitrace anywere in application
+* `OrderingValueBehavior` - allows automatically assign a value to ordering column
+  
 ## MiniTrace.php
 
-This behavior allow u get trace in any point of code: `echo Yii::app()->miniTrace();` 
-
+Allow writes `echo Yii::app()->miniTrace();`   
 Just add follow code into `./protected/config/main.php`
 
 ```
@@ -17,8 +21,8 @@ Just add follow code into `./protected/config/main.php`
 
 ## OrderingValue.php
 
-Class allow u to automatic set value for ordering column for new elements. U need add behavior 
-to your CActiveRecord model and define some params:
+Class allow u to automatically set value for ordering column for new elements. Just add behavior 
+to your `CActiveRecord` model and define column name:
 
 ```
 public function behaviors()
@@ -33,4 +37,4 @@ public function behaviors()
 }
 ``` 
 
-## 
+## to be continued
