@@ -9,7 +9,7 @@ Just add follow code into `./protected/config/main.php`
 ```
 'behaviors'         => [
     'miniTrace' => [
-        'class' => 'application.components.behaviors.MiniTrace',
+        'class' => 'application.components.behaviors.MiniTraceBehavior',
     ],
 ],
 ```
@@ -17,15 +17,16 @@ Just add follow code into `./protected/config/main.php`
 
 ## OrderingValue.php
 
-Class allow u to automatic set value for ordering column for new elements. U need add behavior and set some params:
+Class allow u to automatic set value for ordering column for new elements. U need add behavior 
+to your CActiveRecord model and define some params:
 
 ```
 public function behaviors()
 {
     return [
         'orderingAttribute' => [
-            'class'      => 'application.components.behaviors.OrderingValue',
-            'columnName' => 'ordering',                 // older column name
+            'class'      => 'application.components.behaviors.OrderingValueBehavior',
+            'columnName' => 'ordering',                 // order column name
             'position'   => OrderingValue::POSITION_END // position for new element
         ],
     ];

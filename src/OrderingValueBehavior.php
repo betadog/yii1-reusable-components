@@ -12,7 +12,7 @@ public function behaviors()
 {
     return [
         'orderingAttribute' => [
-            'class'      => 'application.components.behaviors.OrderingValue',
+            'class'      => 'application.components.behaviors.OrderingValueBehavior',
             // колонка по которой осуществляется сортировка
             'columnName' => 'ordering',
             // на какое место ставится новый элемент
@@ -22,7 +22,7 @@ public function behaviors()
 }
 </pre>
  */
-class OrderingValue extends CActiveRecordBehavior
+class OrderingValueBehavior extends CActiveRecordBehavior
 {
     const POSITION_START = 0;
     const POSITION_END   = 1;

@@ -8,7 +8,7 @@
 <pre>
     'behaviors'         => [
         'miniTrace' => [
-            'class' => 'application.components.behaviors.MiniTrace',
+            'class' => 'application.components.behaviors.MiniTraceBehavior',
         ],
     ],
 </pre>
@@ -17,7 +17,7 @@
  * echo Yii:app()->miniTrace();
  *
  */
-class MiniTrace extends CBehavior
+class MiniTraceBehavior extends CBehavior
 {
     public function getMiniTrace(): string
     {
