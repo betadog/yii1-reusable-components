@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "betadog\\yii1": "src/"
+            "betadog\\yii1\\": "src/"
         }
     }
 }
