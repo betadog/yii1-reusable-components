@@ -1,5 +1,7 @@
 <?php
 
+namespace betabog\yii1;
+
 /**
  * Class MiniTrace
  *
