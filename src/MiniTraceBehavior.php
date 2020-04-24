@@ -27,10 +27,11 @@ class MiniTraceBehavior extends \CBehavior
         $trace  = debug_backtrace();
         array_shift($trace);
         foreach ($trace as $one) {
-            if (!isset($one['file']))
+            if (!isset($one['file'])) {
                 $result [] = 'unknown';
-            else
+            } else {
                 $result [] = sprintf('%s -- %s:%d', $one['function'], $one['file'], $one["line"]);
+            }
         }
 
         return implode("\n", $result);

@@ -21,8 +21,9 @@ class MultiFilter extends \CValidator
     protected function validateAttribute($object, $attribute)
     {
         foreach ($this->filters as $filter) {
-            if (!is_callable($filter))
-                throw new \CException(Yii::t('yii', 'The "filter" property must be specified with a valid callback.'));
+            if (!is_callable($filter)) {
+                throw new \CException(\Yii::t('yii', 'The "filter" property must be specified with a valid callback.'));
+            }
 
             $object->$attribute = call_user_func_array($filter, [$object->$attribute]);
         }

@@ -1,5 +1,10 @@
 # yii1-reusable-components
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/badges/build.png?b=master)](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/build-status/master)
+[![Build Status](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/badges/build.png?b=master)](https://scrutinizer-ci.com/g/betadog/yii1-reusable-components/build-status/master)
+
 This package provide some behaviors:
 
 * `MiniTrace` - allow get minitrace anywere in application
